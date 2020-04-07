@@ -25,6 +25,6 @@ When connected to the reader program prints:
 
 If checksum ok program prints:
 "x":"667" "y":"-117" "z":"720" "status":"up" "QoS":"best"  
-where the measurements are on the interval from -1000 to +1000. If recieved power is low QoS obtains the "good" flag.
+where measurements are vector of acceleration relative to the marking on the sensor (if verical 981). If recieved power is low QoS obtains the "good" flag.
 
 if checksum is not ok, vectors obtain value of 0, and QoS flag turns to "bad"
