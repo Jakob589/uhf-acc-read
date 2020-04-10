@@ -7,7 +7,7 @@ ant clean
 run jar:
 java -jar build/UhfRfidReader.jar
 
-after running the jar, you are prompted with input IP:
+after running the jar, you are prompted with "input IP":
 Enter the ip and do not forger the port!!!
 format is: 192.168.1.60:9090
 
