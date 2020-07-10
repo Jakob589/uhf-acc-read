@@ -12,12 +12,12 @@ public class Connect {
         String connID = null;
         String label = null;
 
-        System.out.println("Input IP");
+        //System.out.println("Input IP");
         connID = sc.next();
         label = CLReader.CreateTcpConn(connID, IA) ? "Success" : "Failed";
         sc.close();   
         
-        System.out.println(label);
+        //System.out.println(label);
         return connID;
     }
 

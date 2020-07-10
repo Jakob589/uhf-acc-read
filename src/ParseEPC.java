@@ -25,17 +25,17 @@ public class ParseEPC {
             if (qosHex.equals("FF")) qos = "best";
             if (qosHex.equals("CC")) qos = "bad" ;
 
-            System.out.print("\"x\":\"");
+            System.out.print("{\"x\":\"");
             System.out.print(x);
-            System.out.print("\" \"y\":\"");
+            System.out.print("\", \"y\":\"");
             System.out.print(y);
-            System.out.print("\" \"z\":\"");
+            System.out.print("\", \"z\":\"");
             System.out.print(z);
-            System.out.print("\" \"status\":\"");
+            System.out.print("\", \"status\":\"");
             System.out.print("up\" ");
-            System.out.print("\"QoS\":\"");
+            System.out.print(",\"QoS\":\"");
             System.out.print(qos);
-            System.out.println("\" ");
+            System.out.println("\" }");
             }
         else{
 
@@ -68,17 +68,17 @@ public class ParseEPC {
 
     public static void printNull() {
 
-        System.out.print("\"x\":\"");
+        System.out.print("{\"x\":\"");
         System.out.print("0");
-        System.out.print("\" \"y\":\"");
+        System.out.print("\", \"y\":\"");
         System.out.print("0");
-        System.out.print("\" \"z\":\"");
+        System.out.print("\", \"z\":\"");
         System.out.print("0");
-        System.out.print("\" \"status\":\"");
-        System.out.print("down\"");
+        System.out.print("\", \"status\":\"");
+        System.out.print("down\",");
         System.out.print(" \"QoS\":\"");
         System.out.print("bad");
-        System.out.println("\" ");
+        System.out.println("\" }");
 
     }
 }
