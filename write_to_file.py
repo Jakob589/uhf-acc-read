@@ -1,10 +1,13 @@
+#!/usr/bin/python3
+
 import csv
 import random
 import time
 
 import json, subprocess, os, sys
-cmd = "echo 192.168.1.60:9090 | java -jar /Users/jakob/Documents/ijs/eBottle/uhf-acc-read/build/UhfRfidReader.jar"
+cmd = "echo 192.168.1.60:9090 | java -jar build/UhfRfidReader.jar"
 
+vector = {"x": "1", "y": "1", "z": "1", "status": "down", "QoS": "bad"}
 
 count = 0
 x = 1000
@@ -26,7 +29,9 @@ for line in p.stdout:
     raw_data = str(line.rstrip())
     data = raw_data[2:(len(raw_data) -1)]
     if data == "1|1|2,0006&3,010005": data = '{"x": "0", "y": "0", "z": "0", "status": "down", "QoS": "bad"}'
+    last_vector = vector
     vector = json.loads(data)
+    if (int(vector["x"]) == 0 & int(vector["y"]) == 0 & int(vector["z"]) == 0): vector = last_vector
     print(vector)
 
 

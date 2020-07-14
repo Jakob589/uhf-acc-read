@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from mpl_toolkits.mplot3d import Axes3D
 from multiprocessing import Process, Queue
 import matplotlib.pyplot as plt
@@ -12,14 +14,13 @@ ax = fig.add_subplot(111, projection='3d')
 
 def animate(i):
     data = pd.read_csv('data.csv')
-    count = data['count']
     x = - int(data['z'].tail(1))
-    y = - int(data['y'].tail(1))
+    y =  int(data['y'].tail(1))
     z =  int(data['x'].tail(1))
     
     print(x)
     ax.clear()
-    p0 = [x/10000,y/10000,z/10000]
+    p0 = [x/20000,y/20000,z/20000]
     p1 = [0, 0, 0]
     p2 = [0, 0, 0]
     X, Y, Z = zip(origin,origin,origin) 
