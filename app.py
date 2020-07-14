@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 from mpl_toolkits.mplot3d import Axes3D
-from multiprocessing import Process, Queue
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import json, subprocess, time, os, sys,random
